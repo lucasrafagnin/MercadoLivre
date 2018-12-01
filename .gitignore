@@ -1,0 +1,18 @@
+# Directories 
+.gradle/
+.idea/
+.navigation/
+captures/
+build/
+vim/
+ 
+# Files
+.DS_Store
+gradle.deps
+local.properties
+ 
+# Extensions 
+*.iml
+ 
+# Bitrise / Fabric 
+.bitrise.secrets.yml

@@ -1,0 +1,21 @@
+buildscript {
+    apply from: "libraries.gradle"
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        mavens.each { repo -> maven { url repo } }
+    }
+    dependencies {
+        classpathies.each { classpath it }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        mavens.each { repo -> maven { url repo } }
+    }
+}

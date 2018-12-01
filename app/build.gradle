@@ -1,0 +1,46 @@
+apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion compileSdk
+    buildToolsVersion buildTools
+    defaultConfig {
+        applicationId appId
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
+        versionCode buildCode
+        versionName buildName
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            useProguard true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+    flavorDimensions "environment"
+    productFlavors {
+        all {
+            buildConfigField "String", "API_URL", "\"http://dev.url/\""
+            buildConfigField "Long", "CONNECT_TIMEOUT", "10000L"
+            buildConfigField "Long", "READ_TIMEOUT", "10000L"
+            buildConfigField "Long", "WRITE_TIMEOUT", "10000L"
+        }
+        development {
+            versionName buildName + "-development"
+        }
+    }
+}
+
+dependencies {
+    annotations.each {
+        kapt it
+        kaptTest it
+    }
+    libraries.each { implementation it }
+    unitTests.each { testImplementation it }
+}
