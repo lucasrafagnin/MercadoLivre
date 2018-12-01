@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Payment method -->
+    <dimen name="payment_item_height">80dp</dimen>
+    <dimen name="payment_thumbnail_height">40dp</dimen>
+    <dimen name="payment_thumbnail_width">48dp</dimen>
+    <dimen name="payment_name_size">15sp</dimen>
+
+    <!-- Card issuer -->
+    <dimen name="card_issuer_item_height">80dp</dimen>
+    <dimen name="card_issuer_thumbnail_height">40dp</dimen>
+    <dimen name="card_issuer_thumbnail_width">48dp</dimen>
+    <dimen name="card_issuer_name_size">15sp</dimen>
+
+    <!-- Installments -->
+    <dimen name="installment_item_height">80dp</dimen>
+    <dimen name="installment_circle_height">40dp</dimen>
+    <dimen name="installment_circle_width">40dp</dimen>
+    <dimen name="installment_name_size">16sp</dimen>
+    <dimen name="installment_count_size">16sp</dimen>
+
     <!-- Main button -->
     <dimen name="main_button_height">64dp</dimen>
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/installment_item_height"
+    android:layout_marginTop="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/installments"
+            android:layout_width="@dimen/installment_circle_width"
+            android:layout_height="@dimen/installment_circle_height"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:textColor="@color/card"
+            android:textSize="@dimen/installment_count_size"
+            android:textStyle="bold"
+            tools:text="3x"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/installment_name_size"
+            tools:text="3 cuotas de $ 10,72 ($ 32,16)"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
