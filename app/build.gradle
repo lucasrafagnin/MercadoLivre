@@ -25,7 +25,8 @@ android {
     flavorDimensions "environment"
     productFlavors {
         all {
-            buildConfigField "String", "API_URL", "\"http://dev.url/\""
+            buildConfigField "String", "API_URL", "\"https://api.mercadopago.com/v1/\""
+            buildConfigField "String", "PUBLIC_KEY", "\"444a9ef5-8a6b-429f-abdf-587639155d88\""
             buildConfigField "Long", "CONNECT_TIMEOUT", "10000L"
             buildConfigField "Long", "READ_TIMEOUT", "10000L"
             buildConfigField "Long", "WRITE_TIMEOUT", "10000L"
