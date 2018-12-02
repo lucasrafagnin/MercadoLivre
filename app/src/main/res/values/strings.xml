@@ -3,4 +3,7 @@
     <!-- App -->
     <string name="app_name">MercadoLivre</string>
 
+    <!-- Content description -->
+    <string name="item_selected">Item selecionado</string>
+
 </resources>

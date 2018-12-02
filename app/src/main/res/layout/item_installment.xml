@@ -21,6 +21,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="16dp"
             android:layout_marginStart="8dp"
+            android:background="@drawable/bg_installment"
             android:gravity="center"
             android:textColor="@color/card"
             android:textSize="@dimen/installment_count_size"
