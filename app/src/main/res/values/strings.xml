@@ -13,4 +13,11 @@
     <!-- Content description -->
     <string name="item_selected">Item selecionado</string>
 
+    <!-- Navigation -->
+    <string-array name="tab_steps">
+        <item>Método</item>
+        <item>Emissor</item>
+        <item>Parcelas</item>
+    </string-array>
+
 </resources>

@@ -18,7 +18,7 @@ ext {
     glide = "4.8.0" // https://github.com/bumptech/glide/releases
     jsonAssert = "1.5.0" // https://github.com/skyscreamer/JSONassert/releases
     junit = "4.12" // https://github.com/junit-team/junit4/releases
-    kotlin = "1.2.71" // https://search.maven.org/search?q=g:org.jetbrains.kotlin%20AND%20a:kotlin-stdlib&core=gav
+    kotlin = "1.2.71"// https://search.maven.org/search?q=g:org.jetbrains.kotlin%20AND%20a:kotlin-stdlib&core=gav
     kotshi = "1.0.5" // https://github.com/ansman/kotshi/releases
     ktx = "1.0.0" // https://github.com/android/android-ktx/releases
     material = "1.0.0" // https://dl.google.com/dl/android/maven2/index.html
@@ -31,6 +31,7 @@ ext {
     rxAndroid = "2.1.0" // https://github.com/ReactiveX/RxAndroid/releases
     rxBinding = "2.1.1" // https://github.com/JakeWharton/RxBinding/releases
     rxJava = "2.2.1" // https://github.com/ReactiveX/RxJava/releases
+    stepView = "1.4.0" // https://github.com/shuhart/StepView/releases
     timber = "4.7.1" // https://github.com/JakeWharton/timber/releases
     truth = "0.42" // https://github.com/google/truth/releases
 
@@ -58,6 +59,7 @@ ext {
             "com.google.dagger:dagger:$dagger",
             "com.jakewharton.rxbinding2:rxbinding:$rxBinding",
             "com.jakewharton.timber:timber:$timber",
+            "com.shuhart.stepview:stepview:$stepView",
             "com.squareup.moshi:moshi:$moshi",
             "com.squareup.okhttp3:logging-interceptor:$okHttp",
             "com.squareup.okhttp3:okhttp:$okHttp",

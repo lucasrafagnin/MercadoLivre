@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar"
+        android:layout_marginBottom="@dimen/main_button_height"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.shuhart.stepview.StepView
+            android:id="@+id/step_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:sv_animationType="All"
+            app:sv_background="@color/primary"
+            app:sv_doneCircleColor="@color/accent"
+            app:sv_doneStepLineColor="@color/accent"
+            app:sv_doneStepMarkColor="@android:color/white"
+            app:sv_doneTextColor="@color/accent"
+            app:sv_nextStepLineColor="@color/grey"
+            app:sv_nextTextColor="@color/grey"
+            app:sv_selectedCircleColor="@color/accent"
+            app:sv_selectedStepNumberColor="@android:color/white"
+            app:sv_selectedTextColor="@color/accent"
+            app:sv_stepNumberTextSize="13sp"
+            app:sv_steps="@array/tab_steps"
+            app:sv_stepsNumber="3"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <Button
+        android:id="@+id/action"
+        style="@style/BtnPrimary"
+        android:layout_alignParentBottom="true"
+        android:enabled="false"/>
+
+</RelativeLayout>
