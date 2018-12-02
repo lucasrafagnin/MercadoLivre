@@ -2,6 +2,7 @@ package br.com.mercadolivre.di.component
 
 import android.content.Context
 import br.com.mercadolivre.App
+import br.com.mercadolivre.data.datasource.remote.PaymentCloud
 import br.com.mercadolivre.di.module.AppModule
 import br.com.mercadolivre.di.module.DataSourceModule
 import br.com.mercadolivre.di.module.NetworkModule
@@ -19,6 +20,9 @@ interface AppComponent {
 
     // App
     val context: Context
+
+    // Data Source
+    val paymentCloud: PaymentCloud
 
     // External
     val moshi: Moshi
