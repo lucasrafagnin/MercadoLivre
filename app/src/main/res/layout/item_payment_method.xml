@@ -20,7 +20,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/name"/>
+            android:contentDescription="@string/payment_item_image"/>
 
         <TextView
             android:id="@+id/name"

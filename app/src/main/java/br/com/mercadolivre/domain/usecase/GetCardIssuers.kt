@@ -2,8 +2,8 @@ package br.com.mercadolivre.domain.usecase
 
 import br.com.mercadolivre.data.model.CardIssuer
 import br.com.mercadolivre.data.repository.PaymentRepository
+import br.com.mercadolivre.exception.EmptyStateException
 import io.reactivex.Observable
-import mobi.porquenao.sovai.exception.EmptyStateException
 import javax.inject.Inject
 
 class GetCardIssuers @Inject constructor(
@@ -12,6 +12,6 @@ class GetCardIssuers @Inject constructor(
 
     fun execute(paymentMethod: String): Observable<List<CardIssuer>> =
             repository.getCardIssuers(paymentMethod)
-                    .switchIfEmpty { it.onError(EmptyStateException()) }
+                    .map { if (it.isEmpty()) throw EmptyStateException() else it }
 
 }

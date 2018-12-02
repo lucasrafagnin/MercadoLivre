@@ -23,7 +23,8 @@ abstract class BaseFragment : Fragment(), BaseView {
     abstract fun getLayoutId(): Int
     override fun showLoading() {}
     override fun showContent() {}
-    override fun showConnectionError() {}
+    override fun showError() {}
+    override fun showEmpty() {}
     override fun showMessage(message: Int) = Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(getLayoutId(), container, false)

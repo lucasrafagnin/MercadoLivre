@@ -4,7 +4,7 @@ import br.com.mercadolivre.data.model.PaymentMethod
 import br.com.mercadolivre.data.model.PaymentType
 import br.com.mercadolivre.data.repository.PaymentRepository
 import io.reactivex.Single
-import mobi.porquenao.sovai.exception.EmptyStateException
+import br.com.mercadolivre.exception.EmptyStateException
 import javax.inject.Inject
 
 class GetPaymentMethods @Inject constructor(

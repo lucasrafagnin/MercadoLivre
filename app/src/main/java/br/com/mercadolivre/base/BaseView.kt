@@ -6,7 +6,8 @@ interface BaseView {
 
     fun showLoading()
     fun showContent()
-    fun showConnectionError()
+    fun showError()
+    fun showEmpty()
     fun showMessage(@StringRes message: Int)
 
 }

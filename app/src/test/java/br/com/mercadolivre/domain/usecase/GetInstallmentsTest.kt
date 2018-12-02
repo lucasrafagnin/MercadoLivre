@@ -2,13 +2,13 @@ package br.com.mercadolivre.domain.usecase
 
 import br.com.mercadolivre.data.Fixture
 import br.com.mercadolivre.data.repository.PaymentRepository
+import br.com.mercadolivre.exception.EmptyStateException
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import io.reactivex.Observable
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.plugins.RxJavaPlugins
 import io.reactivex.schedulers.Schedulers
-import mobi.porquenao.sovai.exception.EmptyStateException
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -43,7 +43,7 @@ class GetInstallmentsTest {
     @Test
     fun testExecute_empty() {
         val mockRepository = mock<PaymentRepository> {
-            on { getInstallments(Fixture.paymentMethodId, Fixture.amount, Fixture.cardIssuerId) } doReturn Observable.empty()
+            on { getInstallments(Fixture.paymentMethodId, Fixture.amount, Fixture.cardIssuerId) } doReturn Observable.just(listOf())
         }
 
         GetInstallments(mockRepository)

@@ -23,4 +23,15 @@
     <!-- Main button -->
     <dimen name="main_button_height">64dp</dimen>
 
+    <!-- Error -->
+    <dimen name="error_image_height">96dp</dimen>
+    <dimen name="error_image_width">96dp</dimen>
+    <dimen name="error_button_height">48dp</dimen>
+    <dimen name="error_description_size">16sp</dimen>
+
+    <!-- Empty -->
+    <dimen name="empty_image_height">96dp</dimen>
+    <dimen name="empty_image_width">96dp</dimen>
+    <dimen name="empty_description_size">16sp</dimen>
+
 </resources>

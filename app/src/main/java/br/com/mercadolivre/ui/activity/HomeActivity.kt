@@ -22,11 +22,13 @@ class HomeActivity : BaseActivity(), HomeView {
         setContentView(R.layout.home)
         viewComponent.inject(this)
 
-        action.setOnClickListener {}
+        action.setOnClickListener {
+            presenter.savePrice(price.text.toString().toDouble())
+            presenter.launchPaymentMethod()
+        }
 
         presenter.onAttachView(this)
-        presenter.addDisposable(
-            RxTextView.textChanges(price)
+        presenter.addDisposable(RxTextView.textChanges(price)
                 .map(CharSequence::toString)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { enableNext(!it.isEmpty()) })

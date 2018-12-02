@@ -10,7 +10,7 @@ import io.reactivex.Observable
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.plugins.RxJavaPlugins
 import io.reactivex.schedulers.Schedulers
-import mobi.porquenao.sovai.exception.EmptyStateException
+import br.com.mercadolivre.exception.EmptyStateException
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
