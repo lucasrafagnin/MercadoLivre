@@ -2,6 +2,7 @@ package br.com.mercadolivre.domain.usecase
 
 import br.com.mercadolivre.data.Fixture
 import br.com.mercadolivre.data.repository.PaymentRepository
+import br.com.mercadolivre.exception.EmptyStateException
 import com.google.common.truth.Truth.assertThat
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
@@ -9,7 +10,6 @@ import io.reactivex.Observable
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.plugins.RxJavaPlugins
 import io.reactivex.schedulers.Schedulers
-import br.com.mercadolivre.exception.EmptyStateException
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -48,7 +48,7 @@ class GetCardIssuersTest {
     @Test
     fun testExecute_empty() {
         val mockRepository = mock<PaymentRepository> {
-            on { getCardIssuers(Fixture.paymentMethodId) } doReturn Observable.empty()
+            on { getCardIssuers(Fixture.paymentMethodId) } doReturn Observable.just(listOf())
         }
 
         GetCardIssuers(mockRepository)
