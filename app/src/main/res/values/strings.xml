@@ -7,6 +7,19 @@
     <string name="price_hint">Digite o valor à pagar</string>
     <string name="price_next">Próximo</string>
 
+    <!-- Payment method -->
+    <string name="payment_method_label">Método de pagamento</string>
+    <string name="payment_method_next">Próximo</string>
+
+    <!-- Card issuers -->
+    <string name="card_issuer_label">Emissor do cartão</string>
+    <string name="card_issuer_next">Próximo</string>
+
+    <!-- Installments -->
+    <string name="installment_label">Forma de parcelamento</string>
+    <string name="installment_next">Finalizar compra</string>
+    <string name="installment_name">%1$dx</string>
+
     <!-- Error -->
     <string name="error_message">Não foi possível carregar as informações, tente novamente mais tarde.</string>
     <string name="error_try_again">Tentar novamente</string>
