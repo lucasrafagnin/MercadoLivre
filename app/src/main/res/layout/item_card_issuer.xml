@@ -5,33 +5,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/card_issuer_item_height"
-    android:layout_margin="4dp">
+    android:layout_margin="4dp"
+    android:background="@color/card">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="12dp"
-        tools:ignore="UseCompoundDrawables">
+        android:padding="12dp">
 
         <ImageView
             android:id="@+id/thumbnail"
             android:layout_width="@dimen/card_issuer_thumbnail_width"
             android:layout_height="@dimen/card_issuer_thumbnail_height"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/name"/>
+            android:contentDescription="@string/issuer_item_image"/>
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/thumbnail"
+            android:layout_toRightOf="@+id/thumbnail"
             android:ellipsize="end"
             android:maxLines="1"
             android:textSize="@dimen/card_issuer_name_size"
             tools:text="HSBC"/>
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/item_selected"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_selected"/>
+
+    </RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>

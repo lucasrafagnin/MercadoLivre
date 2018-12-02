@@ -13,8 +13,8 @@ import javax.inject.Inject
 
 interface PaymentView : BaseView {
     fun chooseTab(currentPosition: Int, nextPosition: Int)
-    fun close()
     fun enableNext(enabled: Boolean)
+    fun close()
 }
 
 class PaymentActivity : BaseActivity(), PaymentView {
@@ -26,6 +26,9 @@ class PaymentActivity : BaseActivity(), PaymentView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.payment)
         viewComponent.inject(this)
+
+        toolbar.setNavigationOnClickListener { presenter.backPage() }
+        action.setOnClickListener { presenter.nextPage() }
 
         presenter.onAttachView(this)
         presenter.onStart()

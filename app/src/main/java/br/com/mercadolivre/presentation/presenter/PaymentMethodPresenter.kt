@@ -20,7 +20,9 @@ class PaymentMethodPresenter @Inject constructor(
 
     fun onStart() {
         view?.showLoading()
-        view?.setMethodSelected(getPaymentCache.execute().paymentMethodId)
+
+        val payment = getPaymentCache.execute()
+        view?.setMethodSelected(payment.paymentMethodId)
 
         addDisposable(getPaymentMethods.execute()
                 .subscribeOn(Schedulers.io())
@@ -28,7 +30,6 @@ class PaymentMethodPresenter @Inject constructor(
                 .subscribe({
                     view?.showItems(mapper.map(it))
                 }, {
-                    it.printStackTrace()
                     when (it) {
                         is EmptyStateException -> view?.showEmpty()
                         else -> view?.showError()
