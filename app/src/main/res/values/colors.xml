@@ -3,8 +3,10 @@
 
     <color name="primary">#FEDC13</color>
     <color name="primaryDark">#F6D40F</color>
+    <color name="primaryLight">#FFEA78</color>
     <color name="accent">#3483FA</color>
     <color name="accentDark">#3A7CE8</color>
+    <color name="aux">#33D06F</color>
     <color name="grey_light">#999999</color>
     <color name="grey">#383838</color>
     <color name="black">#000000</color>
