@@ -8,10 +8,15 @@
     <string name="price_next">Próximo</string>
 
     <!-- Error -->
-    <string name="error_default">Não foi possível realizar a ação, tente novamente</string>
+    <string name="error_message">Não foi possível carregar as informações, tente novamente mais tarde.</string>
+    <string name="error_try_again">Tentar novamente</string>
+
+    <!-- Empty -->
+    <string name="empty_message">Não há escolhas disponíveis, tente novamente mais tarde</string>
 
     <!-- Content description -->
     <string name="item_selected">Item selecionado</string>
+    <string name="item_alert">Atenção</string>
 
     <!-- Navigation -->
     <string-array name="tab_steps">

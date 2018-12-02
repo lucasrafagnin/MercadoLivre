@@ -15,7 +15,7 @@ class PaymentMethodFragment : BaseFragment(), PaymentMethodView {
     @Inject
     lateinit var presenter: PaymentMethodPresenter
 
-    override fun getLayoutId() = R.layout.tab_payment_method
+    override fun getLayoutId() = R.layout.tab_content
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -15,7 +15,7 @@ class CardIssuerFragment : BaseFragment(), CardIssuerView {
     @Inject
     lateinit var presenter: CardIssuerPresenter
 
-    override fun getLayoutId() = R.layout.tab_card_issuer
+    override fun getLayoutId() = R.layout.tab_content
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

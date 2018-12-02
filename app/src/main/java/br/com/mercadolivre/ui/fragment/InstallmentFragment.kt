@@ -15,7 +15,7 @@ class InstallmentFragment : BaseFragment(), InstallmentView {
     @Inject
     lateinit var presenter: InstallmentPresenter
 
-    override fun getLayoutId() = R.layout.tab_installment
+    override fun getLayoutId() = R.layout.tab_content
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
