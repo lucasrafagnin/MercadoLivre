@@ -18,7 +18,8 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
 
     override fun showLoading() {}
     override fun showContent() {}
-    override fun showConnectionError() {}
+    override fun showError() {}
+    override fun showEmpty() {}
     override fun showMessage(message: Int) = Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
 }

@@ -1,11 +1,43 @@
 package br.com.mercadolivre.presentation.presenter
 
 import br.com.mercadolivre.base.BasePresenter
+import br.com.mercadolivre.domain.usecase.ClearPaymentCache
+import br.com.mercadolivre.domain.usecase.MakePayment
 import br.com.mercadolivre.ui.activity.PaymentView
 import javax.inject.Inject
 
-class PaymentPresenter @Inject constructor() : BasePresenter<PaymentView>() {
+class PaymentPresenter @Inject constructor(
+        private val makePayment: MakePayment,
+        private val clearPaymentCache: ClearPaymentCache
+) : BasePresenter<PaymentView>() {
 
-    fun onStart() {}
+    private var currentPage = 0
+
+    fun onStart() {
+        view?.chooseTab(currentPage, currentPage)
+        view?.enableNext(false)
+    }
+
+    fun nextPage() {
+        if (currentPage < 2) {
+            currentPage++
+            view?.chooseTab(currentPage - 1, currentPage)
+            view?.enableNext(false)
+        } else {
+            makePayment.execute()
+            view?.close()
+        }
+    }
+
+    fun backPage() {
+        if (currentPage > 0) {
+            currentPage--
+            view?.chooseTab(currentPage + 1, currentPage)
+            view?.enableNext(true)
+        } else {
+            clearPaymentCache.execute()
+            view?.close()
+        }
+    }
 
 }
