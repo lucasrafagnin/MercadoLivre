@@ -1,0 +1,23 @@
+package br.com.mercadolivre.data.repository
+
+import br.com.mercadolivre.data.datasource.remote.PaymentCloud
+import br.com.mercadolivre.data.model.CardIssuer
+import br.com.mercadolivre.data.model.Installment
+import br.com.mercadolivre.data.model.PaymentMethod
+import io.reactivex.Observable
+import javax.inject.Inject
+
+class PaymentRepository @Inject constructor(
+        private val cloud: PaymentCloud
+) {
+
+    fun getPaymentMethods(): Observable<List<PaymentMethod>> =
+            cloud.getPaymentMethods()
+
+    fun getCardIssuers(paymentMethod: String): Observable<List<CardIssuer>> =
+            cloud.getCardIssuers(paymentMethod)
+
+    fun getInstallments(paymentMethod: String, amount: Double, issuerId: String): Observable<List<Installment>> =
+            cloud.getInstallments(paymentMethod, amount, issuerId)
+
+}

@@ -1,0 +1,16 @@
+{
+  "payer_costs": [
+    {
+      "installments": 1,
+      "recommended_message": "1 cuota de $ 25,90 ($ 25,90)"
+    },
+    {
+      "installments": 3,
+      "recommended_message": "3 cuotas de $ 10,72 ($ 32,16)"
+    },
+    {
+      "installments": 6,
+      "recommended_message": "6 cuotas de $ 6,20 ($ 37,18)"
+    }
+  ]
+}
