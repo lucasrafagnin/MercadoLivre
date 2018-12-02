@@ -51,14 +51,17 @@ class PaymentActivity : BaseActivity(), PaymentView {
         step_view.go(nextPosition, true)
         val fragment = when (nextPosition) {
             0 -> {
+                toolbar.setTitle(R.string.payment_method_label)
                 action.setText(R.string.payment_method_next)
                 PaymentMethodFragment()
             }
             1 -> {
+                toolbar.setTitle(R.string.card_issuer_label)
                 action.setText(R.string.card_issuer_next)
                 CardIssuerFragment()
             }
             2 -> {
+                toolbar.setTitle(R.string.installment_label)
                 action.setText(R.string.installment_next)
                 InstallmentFragment()
             }
@@ -68,7 +71,6 @@ class PaymentActivity : BaseActivity(), PaymentView {
             replace(R.id.content, fragment)
             commit()
         }
-        toolbar.title = resources.getStringArray(R.array.tab_steps)[nextPosition]
     }
 
 }
