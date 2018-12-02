@@ -2,6 +2,7 @@ package br.com.mercadolivre.di.module
 
 import android.content.Context
 import br.com.mercadolivre.BuildConfig
+import br.com.mercadolivre.factory.AdapterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -18,6 +19,12 @@ import javax.inject.Singleton
 class NetworkModule(
         private val context: Context
 ) {
+
+    @Provides
+    @Singleton
+    fun provideMoshi(): Moshi = Moshi.Builder()
+            .add(AdapterFactory.INSTANCE)
+            .build()
 
     @Provides
     @Singleton
