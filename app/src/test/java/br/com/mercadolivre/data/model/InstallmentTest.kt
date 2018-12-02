@@ -16,9 +16,9 @@ class InstallmentTest {
             .build()!!
 
     @Test
-    fun testParse() = br.com.mercadolivre.testExt.assert(moshi.fromJson<Installment>(readJson("installments")), Fixture.installments)
+    fun testParse() = br.com.mercadolivre.testExt.assert(moshi.fromJson<Installment>(readJson("installment")), Fixture.installment)
 
     @Test
-    fun testSerialize() = JSONAssert.assertEquals(moshi.toJson(Fixture.installments), readJson("installments"), false)
+    fun testSerialize() = JSONAssert.assertEquals(moshi.toJson(Fixture.installment), readJson("installment"), false)
 
 }
