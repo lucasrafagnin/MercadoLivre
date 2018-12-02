@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="@dimen/error_image_width"
+        android:layout_height="@dimen/error_image_height"
         android:contentDescription="@string/item_alert"
         app:srcCompat="@drawable/ic_alert"/>
 
@@ -25,12 +25,12 @@
         android:gravity="center"
         android:text="@string/error_message"
         android:textColor="@color/grey"
-        android:textSize="16sp"/>
+        android:textSize="@dimen/error_description_size"/>
 
     <Button
         android:id="@+id/retry"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="@dimen/error_button_height"
         android:layout_marginTop="16dp"
         android:background="@android:color/transparent"
         android:gravity="center"

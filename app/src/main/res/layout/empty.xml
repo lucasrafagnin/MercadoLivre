@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="@dimen/empty_image_width"
+        android:layout_height="@dimen/empty_image_height"
         android:contentDescription="@string/item_alert"
         app:srcCompat="@drawable/ic_alert"/>
 
@@ -25,6 +25,6 @@
         android:gravity="center"
         android:text="@string/empty_message"
         android:textColor="@color/grey"
-        android:textSize="16sp"/>
+        android:textSize="@dimen/empty_description_size"/>
 
 </LinearLayout>
