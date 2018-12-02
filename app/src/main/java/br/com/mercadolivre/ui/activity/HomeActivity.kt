@@ -5,6 +5,8 @@ import br.com.mercadolivre.R
 import br.com.mercadolivre.base.BaseActivity
 import br.com.mercadolivre.base.BaseView
 import br.com.mercadolivre.presentation.presenter.HomePresenter
+import com.jakewharton.rxbinding2.widget.RxTextView
+import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.home.*
 import javax.inject.Inject
 
@@ -23,11 +25,20 @@ class HomeActivity : BaseActivity(), HomeView {
         action.setOnClickListener {}
 
         presenter.onAttachView(this)
+        presenter.addDisposable(
+            RxTextView.textChanges(price)
+                .map(CharSequence::toString)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe { enableNext(!it.isEmpty()) })
     }
 
     override fun onDestroy() {
         super.onDestroy()
         presenter.onDetachView()
+    }
+
+    private fun enableNext(enabled: Boolean) {
+        action.isEnabled = enabled
     }
 
 }

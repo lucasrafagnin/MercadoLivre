@@ -44,4 +44,5 @@ dependencies {
     }
     libraries.each { implementation it }
     unitTests.each { testImplementation it }
+    uiTests.each { androidTestImplementation it }
 }
