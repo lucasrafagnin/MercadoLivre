@@ -2,8 +2,13 @@ package br.com.mercadolivre.di.component
 
 import br.com.mercadolivre.di.module.ViewModule
 import br.com.mercadolivre.di.scope.ViewScope
+import br.com.mercadolivre.ui.activity.HomeActivity
 import dagger.Component
 
 @ViewScope
 @Component(modules = [ViewModule::class], dependencies = [AppComponent::class])
-interface ViewComponent
+interface ViewComponent {
+
+    fun inject(target: HomeActivity)
+
+}
