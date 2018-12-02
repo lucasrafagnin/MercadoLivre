@@ -1,0 +1,6 @@
+{
+  "id": "visa",
+  "name": "Visa",
+  "payment_type_id": "credit_card",
+  "thumbnail": "http://img.mlstatic.com/org-img/MP3/API/logos/visa.gif"
+}
