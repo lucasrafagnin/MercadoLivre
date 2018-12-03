@@ -14,7 +14,7 @@ class PaymentPresenter @Inject constructor(
     private var currentPage = 0
 
     fun onStart() {
-        view?.chooseTab(currentPage, currentPage)
+        view?.chooseTab(currentPage, currentPage, false)
         view?.enableNext(false)
     }
 

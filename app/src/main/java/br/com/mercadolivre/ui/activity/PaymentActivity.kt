@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.payment.*
 import javax.inject.Inject
 
 interface PaymentView : BaseView {
-    fun chooseTab(currentPosition: Int, nextPosition: Int)
+    fun chooseTab(currentPosition: Int, nextPosition: Int, animated: Boolean = true)
     fun enableNext(enabled: Boolean)
     fun close()
 }
@@ -49,7 +49,7 @@ class PaymentActivity : BaseActivity(), PaymentView {
 
     override fun close() = finish()
 
-    override fun chooseTab(currentPosition: Int, nextPosition: Int) {
+    override fun chooseTab(currentPosition: Int, nextPosition: Int, animated: Boolean) {
         val goForward = nextPosition > currentPosition
         step_view.go(nextPosition, true)
         val fragment = when (nextPosition) {
@@ -71,6 +71,12 @@ class PaymentActivity : BaseActivity(), PaymentView {
             else -> throw IllegalStateException()
         }
         with(supportFragmentManager.beginTransaction()) {
+            if (animated) {
+                setCustomAnimations(
+                        if (goForward) R.anim.enter_from_right else R.anim.enter_from_left,
+                        if (goForward) R.anim.exit_to_left else R.anim.exit_to_right
+                )
+            }
             replace(R.id.content, fragment)
             commit()
         }
