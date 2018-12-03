@@ -51,6 +51,11 @@ class PaymentMethodFragment : BaseFragment(), PaymentMethodView {
         if (context is PaymentView) paymentListener = context else throw ClassCastException()
     }
 
+    override fun onDetach() {
+        super.onDetach()
+        presenter.onDetachView()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         presenter.onDetachView()
