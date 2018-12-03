@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Home -->
+    <string name="price_hint">Enter the amount to pay</string>
+    <string name="price_next">Next</string>
+
+    <!-- Payment method -->
+    <string name="payment_method_label">Payment method</string>
+    <string name="payment_method_next">Next</string>
+
+    <!-- Card issuers -->
+    <string name="card_issuer_label">Card issuer</string>
+    <string name="card_issuer_next">Next</string>
+
+    <!-- Installments -->
+    <string name="installment_label">Installment</string>
+    <string name="installment_next">Checkout</string>
+    <string name="installment_name">%1$dx</string>
+
+    <!-- Error -->
+    <string name="error_message">The information could not be loaded, please try again later.</string>
+    <string name="error_try_again">Try again</string>
+
+    <!-- Empty -->
+    <string name="empty_message">No choices available, please try again later</string>
+
+    <!-- Popup sucess -->
+    <string name="popup_title">Purchase completed successfully!</string>
+    <string name="popup_subtitle">Order details:</string>
+    <string name="popup_go_home">Back to home</string>
+    <string name="popup_description">-Price: %1$s\n-Payment method: %2$s\n-Card issuer: %3$s\n-Installments: %4$x</string>
+
+    <!-- Content description -->
+    <string name="payment_item_image">Image of the payment method</string>
+    <string name="issuer_item_image">Image of the card issuer</string>
+    <string name="popup_image">The purchase was successful</string>
+    <string name="item_selected">Selected item</string>
+    <string name="item_alert">Attention</string>
+
+    <!-- Navigation -->
+    <string-array name="tab_steps">
+        <item>Method</item>
+        <item>Issuer</item>
+        <item>Installment</item>
+    </string-array>
+
+</resources>
