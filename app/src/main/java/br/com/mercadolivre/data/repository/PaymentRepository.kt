@@ -27,8 +27,6 @@ class PaymentRepository @Inject constructor(
 
     fun savePayment(payment: Payment) = cache.save(payment)
 
-    fun makePayment() = cache.clear()
-
     fun clearCache() = cache.clear()
 
 }

@@ -2,14 +2,12 @@ package br.com.mercadolivre.presentation.presenter
 
 import br.com.mercadolivre.base.BasePresenter
 import br.com.mercadolivre.domain.usecase.ClearPaymentCache
-import br.com.mercadolivre.domain.usecase.MakePayment
 import br.com.mercadolivre.navigation.NavigationController
 import br.com.mercadolivre.ui.activity.PaymentView
 import javax.inject.Inject
 
 class PaymentPresenter @Inject constructor(
         private val navigation: NavigationController,
-        private val makePayment: MakePayment,
         private val clearPaymentCache: ClearPaymentCache
 ) : BasePresenter<PaymentView>() {
 
@@ -26,7 +24,6 @@ class PaymentPresenter @Inject constructor(
             view?.chooseTab(currentPage - 1, currentPage)
             view?.enableNext(false)
         } else {
-            makePayment.execute()
             navigation.launchPopupSuccess()
             view?.close()
         }

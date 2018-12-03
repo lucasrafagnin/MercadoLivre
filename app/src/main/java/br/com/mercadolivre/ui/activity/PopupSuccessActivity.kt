@@ -8,7 +8,9 @@ import br.com.mercadolivre.presentation.presenter.PopupSuccessPresenter
 import kotlinx.android.synthetic.main.popup_success.*
 import javax.inject.Inject
 
-interface PopupSuccessView : BaseView
+interface PopupSuccessView : BaseView {
+    fun setDescription(text: String)
+}
 
 class PopupSuccessActivity : BaseActivity(), PopupSuccessView {
 
@@ -23,11 +25,17 @@ class PopupSuccessActivity : BaseActivity(), PopupSuccessView {
         action.setOnClickListener { finish() }
 
         presenter.onAttachView(this)
+        presenter.onStart()
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        presenter.clearCache()
         presenter.onDetachView()
+    }
+
+    override fun setDescription(text: String) {
+        description.text = text
     }
 
 }
