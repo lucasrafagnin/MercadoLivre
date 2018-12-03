@@ -13,6 +13,6 @@ class HomePresenter @Inject constructor(
 
     fun launchPaymentMethod() = navigation.launchPayment()
 
-    fun savePrice(price: Double) = savePaymentCache.execute(price)
+    fun savePrice(amount: Double, amountFormatted: String) = savePaymentCache.execute(amount, amountFormatted)
 
 }

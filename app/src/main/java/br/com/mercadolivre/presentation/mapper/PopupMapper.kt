@@ -11,7 +11,7 @@ class PopupMapper @Inject constructor(
 ) {
 
     fun map(payment: Payment): String = with(payment) {
-        context.getString(R.string.popup_description, amount, paymentMethodId, cardIssuerId, installments)
+        context.getString(R.string.popup_description, amountFormatted, paymentMethodId, cardIssuerId, installments)
     }
 
 }

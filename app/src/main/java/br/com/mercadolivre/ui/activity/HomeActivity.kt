@@ -23,15 +23,14 @@ class HomeActivity : BaseActivity(), HomeView {
         viewComponent.inject(this)
 
         action.setOnClickListener {
-            presenter.savePrice(price.text.toString().toDouble())
+            presenter.savePrice(price.currencyDouble, price.currencyText)
             presenter.launchPaymentMethod()
         }
 
         presenter.onAttachView(this)
         presenter.addDisposable(RxTextView.textChanges(price)
-                .map(CharSequence::toString)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { enableNext(!it.isEmpty()) })
+                .subscribe { enableNext(!price.currencyText.isEmpty() && price.currencyDouble > 0) })
     }
 
     override fun onDestroy() {

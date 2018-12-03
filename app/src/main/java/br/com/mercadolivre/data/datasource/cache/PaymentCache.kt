@@ -13,6 +13,7 @@ class PaymentCache @Inject constructor() {
         cache = payment.let {
             cache.copy(
                     amount = if (it.amount != .0) it.amount else cache.amount,
+                    amountFormatted = it.amountFormatted ?: cache.amountFormatted,
                     paymentMethodId = it.paymentMethodId ?: cache.paymentMethodId,
                     cardIssuerId = it.cardIssuerId ?: cache.cardIssuerId,
                     installments = if (it.installments != 0) it.installments else cache.installments
