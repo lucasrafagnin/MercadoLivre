@@ -11,10 +11,10 @@ fun Any.getApp() = when (this) {
     else -> throw IllegalStateException()
 }
 
-fun Fragment.show(vararg views: View) {
+fun Any.show(vararg views: View) {
     views.forEach { it.visibility = View.VISIBLE }
 }
 
-fun Fragment.hide(vararg views: View) {
+fun Any.hide(vararg views: View) {
     views.forEach { it.visibility = View.GONE }
 }
