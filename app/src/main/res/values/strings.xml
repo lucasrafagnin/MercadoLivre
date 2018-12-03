@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- App -->
-    <string name="app_name">Mercado Livre</string>
+    <string name="app_name" translatable="false">Mercado Livre</string>
 
     <!-- Home -->
     <string name="price_hint">Digite o valor à pagar</string>

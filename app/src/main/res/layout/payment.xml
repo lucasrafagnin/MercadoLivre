@@ -20,7 +20,8 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            app:navigationIcon="?attr/homeAsUpIndicator"/>
 
         <com.shuhart.stepview.StepView
             android:id="@+id/step_view"
