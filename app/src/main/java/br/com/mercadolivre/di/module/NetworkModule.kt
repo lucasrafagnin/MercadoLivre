@@ -1,7 +1,10 @@
 package br.com.mercadolivre.di.module
 
 import android.content.Context
+import android.os.Build
 import br.com.mercadolivre.BuildConfig
+import br.com.mercadolivre.data.repository.security.TLSSocketFactory
+import br.com.mercadolivre.data.repository.security.TLSX509TrustManager
 import br.com.mercadolivre.factory.AdapterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -12,8 +15,13 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.security.KeyManagementException
+import java.security.NoSuchAlgorithmException
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
+import javax.net.ssl.SSLContext
+import javax.net.ssl.SSLSocketFactory
+
 
 @Module
 class NetworkModule(
@@ -25,6 +33,28 @@ class NetworkModule(
     fun provideMoshi(): Moshi = Moshi.Builder()
             .add(AdapterFactory.INSTANCE)
             .build()
+
+    @Provides
+    @Singleton
+    fun provideSSLSocketFactory(): SSLSocketFactory {
+        val sslContext: SSLContext
+        try {
+            sslContext = SSLContext.getInstance("TLS")
+        } catch (e: NoSuchAlgorithmException) {
+            throw RuntimeException(e)
+        }
+
+        try {
+            sslContext.init(null, null, null)
+        } catch (e: KeyManagementException) {
+            throw RuntimeException(e)
+        }
+        return if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
+            TLSSocketFactory(sslContext.socketFactory)
+        } else {
+            sslContext.socketFactory
+        }
+    }
 
     @Provides
     @Singleton
@@ -52,7 +82,7 @@ class NetworkModule(
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(cache: Cache): OkHttpClient = OkHttpClient.Builder()
+    fun provideOkHttpClient(cache: Cache, sslSocketFactory: SSLSocketFactory): OkHttpClient = OkHttpClient.Builder()
             .addInterceptor { chain ->
                 with(chain.request()) {
                     val originalHttpUrl = url()
@@ -65,6 +95,7 @@ class NetworkModule(
                     chain.proceed(request)
                 }
             }
+            .sslSocketFactory(sslSocketFactory, TLSX509TrustManager())
             .cache(cache)
             .connectTimeout(BuildConfig.CONNECT_TIMEOUT, TimeUnit.MILLISECONDS)
             .readTimeout(BuildConfig.READ_TIMEOUT, TimeUnit.MILLISECONDS)
