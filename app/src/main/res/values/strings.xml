@@ -1,7 +1,7 @@
 <resources>
 
     <!-- App -->
-    <string name="app_name">MercadoLivre</string>
+    <string name="app_name">Mercado Livre</string>
 
     <!-- Home -->
     <string name="price_hint">Digite o valor à pagar</string>
