@@ -3,6 +3,7 @@ package br.com.mercadolivre.presentation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import br.com.mercadolivre.R
 import br.com.mercadolivre.di.module.GlideApp
@@ -43,6 +44,7 @@ class PaymentMethodAdapter(
             with(view) {
                 GlideApp.with(context)
                         .load(item.thumbnail)
+                        .placeholder(AppCompatResources.getDrawable(context, R.drawable.img_placeholder))
                         .into(thumbnail)
                 name.text = item.name
                 setOnClickListener { listener.itemSelected(item.id) }
