@@ -34,4 +34,12 @@
     <dimen name="empty_image_width">96dp</dimen>
     <dimen name="empty_description_size">16sp</dimen>
 
+    <!-- Popup sucess -->
+    <dimen name="popup_button_height">56dp</dimen>
+    <dimen name="popup_button_size">18sp</dimen>
+    <dimen name="popup_title_size">27sp</dimen>
+    <dimen name="popup_subtitle_size">20sp</dimen>
+    <dimen name="popup_description_size">17sp</dimen>
+    <dimen name="popup_image_height">148dp</dimen>
+
 </resources>

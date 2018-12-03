@@ -8,6 +8,11 @@
         <item name="background">@color/background</item>
     </style>
 
+    <style name="PopupTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">@color/accentDark</item>
+        <item name="background">@color/accent</item>
+    </style>
+
     <style name="BtnPrimary">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/main_button_height</item>

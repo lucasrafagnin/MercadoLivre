@@ -27,6 +27,10 @@
         <activity
             android:name=".ui.activity.PaymentActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.PopupSuccessActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PopupTheme"/>
     </application>
 
 </manifest>

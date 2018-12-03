@@ -27,10 +27,16 @@
     <!-- Empty -->
     <string name="empty_message">Não há escolhas disponíveis, tente novamente mais tarde</string>
 
+    <!-- Popup sucess -->
+    <string name="popup_title">Compra realizada\ncom sucesso!</string>
+    <string name="popup_subtitle">Detalhes do pedido:</string>
+    <string name="popup_go_home">Voltar para a home</string>
+
     <!-- Content description -->
     <string name="payment_item_image">Imagem da forma de pagamento</string>
     <string name="issuer_item_image">Imagem do emissor do cartão</string>
     <string name="installmente_item_image">Imagem da forma de parcelamento</string>
+    <string name="popup_image">A compra foi realizada com sucesso</string>
     <string name="item_selected">Item selecionado</string>
     <string name="item_alert">Atenção</string>
 
