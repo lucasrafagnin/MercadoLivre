@@ -13,6 +13,7 @@ ext {
 
     appcompat = "1.0.0" // https://dl.google.com/dl/android/maven2/index.html
     constraint = "1.1.3" // https://dl.google.com/dl/android/maven2/index.html
+    currencyEditText = "1.0.1" // https://github.com/faranjit/currency_edittext/releases
     dagger = "2.17" // https://github.com/google/dagger/releases
     espresso = "3.1.0-alpha4" // https://dl.google.com/dl/android/maven2/index.html
     glide = "4.8.0" // https://github.com/bumptech/glide/releases
@@ -58,6 +59,7 @@ ext {
             "androidx.constraintlayout:constraintlayout:$constraint",
             "androidx.core:core-ktx:$ktx",
             "com.github.bumptech.glide:glide:$glide",
+            "com.github.faranjit:currency-edittext:$currencyEditText",
             "com.google.android.material:material:$material",
             "com.google.dagger:dagger:$dagger",
             "com.jakewharton.rxbinding2:rxbinding:$rxBinding",

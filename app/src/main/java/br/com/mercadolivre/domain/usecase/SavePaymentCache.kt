@@ -8,10 +8,11 @@ class SavePaymentCache @Inject constructor(
         private val repository: PaymentRepository
 ) {
 
-    fun execute(price: Double? = .0,
+    fun execute(amount: Double? = .0,
+                amountFormatted: String? = null,
                 paymentMethodId: String? = null,
                 issuerId: String? = null,
                 installments: Int? = 0) =
-            repository.savePayment(Payment(price, paymentMethodId, issuerId, installments))
+            repository.savePayment(Payment(amount, amountFormatted, paymentMethodId, issuerId, installments))
 
 }

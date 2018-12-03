@@ -31,7 +31,7 @@
     <string name="popup_title">Compra realizada\ncom sucesso!</string>
     <string name="popup_subtitle">Detalhes do pedido:</string>
     <string name="popup_go_home">Voltar para a home</string>
-    <string name="popup_description">-Valor: %1$f\n-Forma de pagamento: %2$s\n-Emissor do cartão: %3$s\n-Número de parcelas: %4$x</string>
+    <string name="popup_description">-Valor: %1$s\n-Forma de pagamento: %2$s\n-Emissor do cartão: %3$s\n-Número de parcelas: %4$x</string>
 
     <!-- Content description -->
     <string name="payment_item_image">Imagem da forma de pagamento</string>

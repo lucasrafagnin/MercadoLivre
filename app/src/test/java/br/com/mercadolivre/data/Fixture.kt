@@ -5,6 +5,7 @@ import br.com.mercadolivre.data.model.*
 object Fixture {
 
     const val amount = 100.0
+    const val amountFormatted = "R$100.00"
     const val paymentMethodId = "master"
     const val cardIssuerId = "326"
     const val installmentsId = 3
@@ -45,6 +46,6 @@ object Fixture {
             Cost("6 cuotas de \$ 6,20 (\$ 37,18)", 6)
     )))
 
-    val payment = Payment(amount, paymentMethodId, cardIssuerId, installmentsId)
+    val payment = Payment(amount, amountFormatted, paymentMethodId, cardIssuerId, installmentsId)
 
 }

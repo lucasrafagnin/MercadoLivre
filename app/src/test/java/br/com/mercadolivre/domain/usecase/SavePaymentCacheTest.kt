@@ -31,7 +31,7 @@ class SavePaymentCacheTest {
         val cache = PaymentCache()
 
         SavePaymentCache(PaymentRepository(mock(), cache)).execute(
-                Fixture.amount, Fixture.paymentMethodId, Fixture.cardIssuerId, Fixture.installmentsId
+                Fixture.amount, Fixture.amountFormatted, Fixture.paymentMethodId, Fixture.cardIssuerId, Fixture.installmentsId
         )
 
         assertThat(cache.get().amount).isEqualTo(Fixture.amount)

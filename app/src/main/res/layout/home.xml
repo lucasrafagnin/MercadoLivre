@@ -29,13 +29,17 @@
         android:hint="@string/price_hint"
         app:layout_constraintTop_toBottomOf="@+id/app_bar">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <faranjit.currency.edittext.CurrencyEditText
             android:id="@+id/price"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:gravity="center"
             android:inputType="numberDecimal"
-            android:textSize="34sp"/>
+            android:maxLength="12"
+            android:textColor="@android:color/black"
+            android:textSize="34sp"
+            app:locale="pt_BR"
+            app:showSymbol="true"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
