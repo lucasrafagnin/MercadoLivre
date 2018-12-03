@@ -93,17 +93,6 @@ class PaymentRepositoryTest {
     }
 
     @Test
-    fun testMakePayment() {
-        val cache = PaymentCache()
-        cache.save(Fixture.payment)
-
-        assertThat(cache.get()).isEqualTo(Fixture.payment)
-        PaymentRepository(mock(), cache).makePayment()
-
-        assertThat(cache.get()).isNotEqualTo(Fixture.payment)
-    }
-
-    @Test
     fun testClearCache() {
         val cache = PaymentCache()
         cache.save(Fixture.payment)
