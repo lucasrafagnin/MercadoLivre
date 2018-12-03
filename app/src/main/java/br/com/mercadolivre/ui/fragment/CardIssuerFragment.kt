@@ -14,6 +14,7 @@ import br.com.mercadolivre.presentation.adapter.CardIssuerSelected
 import br.com.mercadolivre.presentation.model.CardIssuer
 import br.com.mercadolivre.presentation.presenter.CardIssuerPresenter
 import br.com.mercadolivre.ui.activity.PaymentView
+import kotlinx.android.synthetic.main.error.*
 import kotlinx.android.synthetic.main.tab_content.*
 import javax.inject.Inject
 
@@ -39,6 +40,7 @@ class CardIssuerFragment : BaseFragment(), CardIssuerView {
 
         adapter = CardIssuerAdapter(this)
         list.layoutManager = GridLayoutManager(context, 2)
+        retry.setOnClickListener { presenter.onStart() }
 
         presenter.onAttachView(this)
         presenter.onStart()

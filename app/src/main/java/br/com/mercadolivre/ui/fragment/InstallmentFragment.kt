@@ -15,6 +15,7 @@ import br.com.mercadolivre.presentation.adapter.InstallmentSelected
 import br.com.mercadolivre.presentation.model.Installment
 import br.com.mercadolivre.presentation.presenter.InstallmentPresenter
 import br.com.mercadolivre.ui.activity.PaymentView
+import kotlinx.android.synthetic.main.error.*
 import kotlinx.android.synthetic.main.tab_content.*
 import javax.inject.Inject
 
@@ -40,6 +41,7 @@ class InstallmentFragment : BaseFragment(), InstallmentView {
 
         adapter = InstallmentAdapter(this)
         list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        retry.setOnClickListener { presenter.onStart() }
 
         presenter.onAttachView(this)
         presenter.onStart()
