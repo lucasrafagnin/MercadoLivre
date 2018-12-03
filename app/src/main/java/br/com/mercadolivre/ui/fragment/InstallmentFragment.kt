@@ -10,10 +10,8 @@ import br.com.mercadolivre.base.BaseFragment
 import br.com.mercadolivre.base.BaseView
 import br.com.mercadolivre.ext.hide
 import br.com.mercadolivre.ext.show
-import br.com.mercadolivre.presentation.adapter.CardIssuerAdapter
 import br.com.mercadolivre.presentation.adapter.InstallmentAdapter
 import br.com.mercadolivre.presentation.adapter.InstallmentSelected
-import br.com.mercadolivre.presentation.model.CardIssuer
 import br.com.mercadolivre.presentation.model.Installment
 import br.com.mercadolivre.presentation.presenter.InstallmentPresenter
 import br.com.mercadolivre.ui.activity.PaymentView
